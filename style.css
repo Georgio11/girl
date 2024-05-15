@@ -1,0 +1,937 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/Montserrat-Black.woff2') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    background: #fff;
+    height: 100%;
+    font-family: 'CustomFont', sans-serif;
+    font-style: normal;
+    overflow: hidden;
+}
+
+/* landing */
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: url(images/bg.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper::after {
+    content: '';
+    width: 100%;
+    height: 20%;
+    border-radius: 50%;
+    filter: blur(25px);
+    position: absolute;
+    bottom: -10%;
+    background: #1D0143;
+}
+
+.logo {
+    width: 160px;
+    margin: 20px auto 0 auto;
+    position: relative;
+    z-index: 4;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.girl {
+    position: absolute;
+    right: -15%;
+    bottom: -2%;
+    /* background: url(images/girl.webp) no-repeat; */
+    /* background-size: contain;
+    background-position: bottom; */
+    object-fit: contain;
+    width: 60%;
+    height: 100%;
+    animation: candy 5s infinite ease-in-out;
+    z-index: 2;
+}
+
+.candy {
+    position: absolute;
+    bottom: 0;
+    left: -6%;
+    background: url(images/candy.webp) no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    width: 60%;
+    height: 90%;
+    z-index: 2;
+    animation: candy 5s infinite ease-in-out;
+    aspect-ratio: auto 640 / 360;
+}
+
+.bomb {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    background: url(images/bomb.webp) no-repeat;
+    background-size: contain;
+    background-position: top;
+    width: 30%;
+    height: 100%;
+    z-index: 2;
+    animation: candy 5s infinite ease-in-out;
+}
+
+@keyframes candy {
+    0%{
+        transform: scale(1) ;
+    }
+    
+    50%{
+        transform: scale(1.05);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.money {
+    position: absolute;
+    left: -150px;
+    z-index: 1;
+}
+
+.wheel_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    z-index: 4;
+}
+
+.wheel_container {
+    width: 55vh;
+    height: 55vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5%;
+}
+
+.wheel_frame {
+    width: 100%;
+    height: 100%;
+    animation: rotate 3s infinite linear;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(-2deg);
+    }
+
+    20% {
+        transform: rotate(-4deg);
+    }
+
+    30% {
+        transform: rotate(-6deg);
+    }
+
+    40% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    70% {
+        transform: rotate(-6deg);
+    }
+
+    80% {
+        transform: rotate(-4deg);
+    }
+
+    90% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    background: url(images/wheel.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: 5s;
+    position: relative;
+    z-index: 2;
+}
+
+.arrow_container {
+    position: absolute;
+    top: -4%;
+    width: 100%;
+    height: 100%;
+    animation: rotate2 3s infinite linear;
+    z-index: 3;
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(2deg);
+    }
+
+    20% {
+        transform: rotate(4deg);
+    }
+
+    30% {
+        transform: rotate(6deg);
+    }
+
+    40% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(8deg);
+    }
+
+    70% {
+        transform: rotate(6deg);
+    }
+
+    80% {
+        transform: rotate(4deg);
+    }
+
+    90% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.arrow {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 115%;
+    height: 115%;
+    background: url(images/arrow.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24%;
+    height: 24%;
+    background: url(images/btn.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    animation: scale 2s infinite;
+    z-index: 3;
+}
+
+.btn:hover {
+    background: url(images/btn_active.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    50% {
+        transform: scale(1.05) translate(-47%, -47%);
+    }
+
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 281px;
+    height: 45px;
+    border-radius: 100px;
+    background: #DF07A0;
+    color: #FFF;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 5px auto;
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 5px 5px 5px #000;
+    z-index: 4;
+}
+
+.partners {
+    max-width: 873px;
+    padding: 0 30px;
+    margin: 0 auto 30px auto;
+    justify-self: flex-end;
+    position: relative;
+    z-index: 3;
+}
+
+.partners img {
+    width: 100%;
+}
+
+.modal_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 9, 27, 0.50);
+    opacity: 0;
+    transition: 0.5s;
+    display: none;
+    z-index: 5;
+}
+
+.modal_container.active {
+    display: flex;
+}
+
+.modal_container.active.opacity {
+    opacity: 1;
+}
+
+.modal {
+    display: flex;
+    background: url(images/frame.webp) no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 70%;
+    height: 60%;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 900;
+    position: relative;
+}
+
+.animation {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 0%;
+    background: url(images/animation.gif) no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 3%;
+}
+
+.modal_wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal p:nth-child(1) {
+    text-align: center;
+    font-size: 96px;
+    margin: 35px 0 30px 0;
+    color: #FAFF00;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0px;
+}
+
+.btns button {
+    padding: 13px 55px;
+    border-radius: 50px;
+    background: #6800BA;
+    color: #FFF;
+    font-family: 'CustomFont',sans-serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btns button:hover {
+    background: #A0000A;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.btns button:nth-child(2) {
+    display: none;
+}
+
+.btns button:nth-child(2).active {
+    display: block;
+}
+
+.btns button:nth-child(1).active {
+    display: none;
+}
+
+.wrapper.modificate4 .btns button:hover {
+    background: rgb(244, 184, 77);
+}
+
+.wrapper.modificate4 .btn:hover {
+    background: url(images/btn.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+@media screen and (max-height: 700px) {
+    .wrapper.modificate2 .partners {
+        max-width: 500px;
+    }
+
+    .wrapper.modificate1 .partners {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .wrapper.modificate1 .info {
+        width: 200px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .wrapper.modificate1 .wheel_container {
+        margin-top: 50px;
+        width: 60vh;
+        height: 60vh;
+    }
+
+    .wrapper.modificate1 .logo {
+        width: 130px;
+    }
+
+    .wrapper.modificate1 .girl {
+        right: -2%;
+    }
+
+    .wrapper.modificate1 .bomb {
+        top: 3%;
+        left: 23%;
+        width: 19%;
+        height: 100%;
+    }
+
+    .wrapper.modificate1 .candy {
+        bottom: 0;
+        left: 5%;
+        width: 45%;
+        height: 60%;
+    }
+
+    .wrapper.modificate1 .modal p:nth-child(1) {
+        font-size: 50px;
+        margin: 35px 0 20px 0;
+    }
+    
+    .wrapper.modificate1 .btns button {
+        padding: 10px 40px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .wrapper.modificate2 .girl {
+        right: -10%;
+    }
+
+    .wrapper.modificate2 .bomb {
+        top: 3%;
+        left: 20%;
+        width: 23%;
+        height: 100%;
+    }
+
+    .wrapper.modificate2 .candy {
+        bottom: 0;
+        left: 3%;
+        width: 50%;
+        height: 60%;
+    }
+
+    .wrapper.modificate2 .modal p:nth-child(1) {
+        font-size: 70px;
+        margin: 35px 0 20px 0;
+    }
+    
+    .wrapper.modificate2 .btns button {
+        padding: 12px 50px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 1500px) {
+   
+}
+
+@media screen and (max-width: 1300px) {
+    .wrapper.modificate2 .modal p:nth-child(1) {
+        font-size: 50px;
+        margin: 35px 0 15px 0;
+    }
+    
+    .wrapper.modificate2 .btns button {
+        padding: 10px 40px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .wrapper.modificate2 .logo {
+        width: 100px;
+    }
+
+    .wrapper.modificate2 .info {
+        width: 200px;
+        height: 35px;
+        font-size: 17px;
+    }
+
+    .wrapper.modificate3 .modal p:nth-child(1) {
+        font-size: 60px;
+        margin: 35px 0 15px 0;
+    }
+    
+    .wrapper.modificate3 .btns button {
+        padding: 10px 50px;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .wrapper.modificate3 .partners {
+        max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper.modificate4 .wheel_container {
+        margin-top: 0;
+        width: 50vh;
+        height: 50vh;
+    }
+
+    .wrapper.modificate4 .wheel_wrapper {
+        margin-top: 10%;
+        margin-bottom: 250px;
+        flex: 0;
+    }
+
+    .wrapper.modificate4 .info {
+        order: 2;
+        font-size: 40px;
+        width: 500px;
+        height: 70px;
+    }
+
+    .partners {
+        order: 3;
+    }
+
+    .wrapper.modificate4 .girl {
+        background-position: right bottom;
+        left: -17%;
+        height: 60%;
+        width: 70%;
+        bottom: -2%;
+        animation: girl1 5s infinite ease-in-out;
+    }
+
+    .wrapper.modificate4 .candy {
+        background-position: right bottom;
+        right: -10%;
+        bottom: -3%;
+        left: auto;
+        animation: candy1 5s infinite ease-in-out;
+        height: 40%;
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 45%;
+        right: -7%;
+        left: auto;
+        width: 30%;
+        height: 30%;
+        animation: candy 5s infinite ease-in-out;
+    }
+
+    .wrapper.modificate4 .animation {
+        top: 5%;
+    }
+
+    @keyframes girl1 {
+        0%{
+            transform: scale(1) scaleX(-1) rotate(10deg);
+        }
+        
+        50%{
+            transform: scale(1.05) scaleX(-1) rotate(10deg);
+        }
+    
+        100%{
+            transform: scale(1) scaleX(-1) rotate(10deg);
+        }
+    }
+
+    @keyframes candy1 {
+        0%{
+            transform: scale(1.6) rotate(30deg);
+        }
+        
+        50%{
+            transform: scale(1.7) rotate(30deg);
+        }
+    
+        100%{
+            transform: scale(1.6) rotate(30deg);
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper.modificate4 .wheel_wrapper {
+        margin-top: 10%;
+        margin-bottom: 200px;
+        flex: 0;
+    }
+
+    .wrapper.modificate4 .modal p:nth-child(1) {
+        font-size: 60px;
+        margin: 35px 0 15px 0;
+    }
+    
+    .wrapper.modificate4 .btns button {
+        padding: 10px 50px;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 50%;
+    }
+
+    .wrapper.modificate4 .info {
+        order: 2;
+        font-size: 20px;
+        width: 300px;
+        height: 70px;
+    }
+
+    .wrapper.modificate4 .partners {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper.modificate3 .logo {
+        width: 100px;
+    }
+
+    .wrapper.modificate3 .info {
+        width: 150px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .wrapper.modificate3 .partners {
+        max-width: 500px;
+    }
+
+    .wrapper.modificate4 .logo {
+        width: 100px;
+    }
+
+    .wrapper.modificate4 .modal p:nth-child(1) {
+        font-size: 30px;
+        margin: 35px 0 15px 0;
+    }
+    
+    .wrapper.modificate4 .btns button {
+        padding: 5px 30px;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .wrapper.modificate4 .partners {
+        margin-bottom: 100px;
+    }
+
+    .wrapper.modificate4 .girl {
+        left: -25%;
+        bottom: -4%;
+        width: 90%;
+    }
+
+    .wrapper.modificate4 .candy {
+        right: -10%;
+        bottom: 0%;
+        height: 25%;
+    }
+
+    @keyframes candy1 {
+        0%{
+            transform: scale(2) rotate(30deg);
+        }
+        
+        50%{
+            transform: scale(2.1) rotate(30deg);
+        }
+    
+        100%{
+            transform: scale(2) rotate(30deg);
+        }
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 50%;
+        right: -10%;
+        left: auto;
+        width: 35%;
+        animation: candy 5s infinite ease-in-out;
+    }
+
+    .wrapper.modificate4 .wheel_wrapper {
+        margin-top: 10%;
+        margin-bottom: 100px;
+        flex: 0;
+    }
+
+    .wrapper.modificate4 .info {
+        width: 250px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        width: 47vh;
+        height: 47vh;
+    }
+
+    .wrapper.modificate4 .modal {
+        transform: scale(1.2);
+    }
+
+    .wrapper.modificate4 .modal p:nth-child(1) {
+        font-size: 30px;
+        margin: 30px 0 10px 0;
+    }
+    
+    .wrapper.modificate4 .btns button {
+        padding: 5px 30px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 431px) and (max-height: 932px) {
+    .wrapper.modificate4 .partners {
+        margin-bottom: 150px;
+    }
+
+    .wrapper.modificate4 .girl {
+        left: -25%;
+        width: 80%;
+        bottom: 5%;
+        height: 45%;
+    }
+
+    .wrapper.modificate4 .wheel_wrapper {
+        margin-top: 0;
+        margin-bottom: 130px;
+        flex: 0;
+    }
+
+    @keyframes girl1 {
+        0%{
+            transform: scale(1.55) scaleX(-1) rotate(10deg);
+        }
+        
+        50%{
+            transform: scale(1.60) scaleX(-1) rotate(10deg);
+        }
+    
+        100%{
+            transform: scale(1.55) scaleX(-1) rotate(10deg);
+        }
+    }
+
+    .wrapper.modificate4 .candy {
+        /* right: -35%;
+        bottom: 0%; */
+        /* height: 40%; */
+        width: 70%;
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 45%;
+        right: -10%;
+        width: 40%;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        width: 40vh;
+        height: 40vh;
+        margin-top: 18%;
+        margin-bottom: 0%;
+    }
+
+    .wrapper.modificate4 .animation {
+        top: 6%;
+    }
+}
+
+@media screen and (max-width: 412px) and (max-height: 900px) {
+
+}
+
+@media screen and (max-width: 415px) and (max-height: 800px) {
+    .wrapper.modificate4 .wheel_container {
+        width: 40vh;
+        height: 40vh;
+        margin-top: 10%;
+        margin-bottom: 13%;
+    }
+
+    .wrapper.modificate4 .modal p:nth-child(1) {
+        font-size: 24px;
+        margin: 30px 0 10px 0;
+    }
+    
+    .wrapper.modificate4 .btns button {
+        padding: 5px 25px;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 50%;
+        right: -10%;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 376px) and (max-height: 700px) {
+    .wrapper.modificate4 .wheel_container {
+        margin-top: 0%;
+        margin-bottom: -5%;
+    }
+
+    .wrapper.modificate4 .bomb {
+        top: 42%;
+        right: -10%;
+        width: 40%;
+        height: 100%;
+    }
+
+    .wrapper.modificate4 .girl {
+        left: -25%;
+        width: 70%;
+    }
+
+    .wrapper.modificate4 .partners {
+        margin-bottom: 200px;
+    }
+
+    .wrapper.modificate4 .wheel_wrapper {
+        margin-top: 8%;
+        margin-bottom: 130px;
+    }
+}
+
+@media screen and (max-width: 321px) and (max-height: 700px) {
+   
+}

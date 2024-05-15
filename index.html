@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" fetchpriority="high" as="image" href="images/girl.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="bomb"></div>
+        <div class="candy"></div>
+        <img fetchpriority="high" src="images/girl.webp" alt="" class="girl">
+        <div class="logo">
+            <img src="images/logo.webp" alt="logo">
+        </div>
+        <div class="info">Number of tries: &nbsp; <span class="tries"> 2</span></div>
+        <div class="wheel_wrapper">
+            <div class="wheel_container">
+                <div class="wheel_frame">
+                    <div class="wheel"></div>
+                    <div class="arrow_container">
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div class="partners">
+            <img src="images/partners.webp" alt="partners">
+        </div>
+
+        <div class="modal_container">
+            <div class="animation"></div>
+            <div class="modal">
+                <div class="modal_wrapper">
+                    <p class="bonus">15$</p>
+                    <div class="btns">
+                        <button>Spin again</button>
+                        <button onclick="redirect()">Get the reward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
